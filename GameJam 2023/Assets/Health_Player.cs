@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            TakeDamage(damage);
+            
             GiveDamage(collision.gameObject);
         }
     }
@@ -31,8 +31,9 @@ public class Health : MonoBehaviour
 
     void GiveDamage(GameObject enemy)
     {
+        print("GiveDamage");
         // Assuming the enemy also has a Health script
-        Health enemyHealth = enemy.GetComponent<Health>();
+        var enemyHealth = enemy.GetComponent<Enemy>();
         if (enemyHealth != null)
         {
             enemyHealth.TakeDamage(damage);

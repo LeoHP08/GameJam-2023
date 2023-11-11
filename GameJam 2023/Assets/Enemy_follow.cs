@@ -24,12 +24,14 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             AttackPlayer(collision.gameObject);
+    
         }
     }
 
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        print(currentHealth);
         if (currentHealth <= 0)
         {
             Die();
