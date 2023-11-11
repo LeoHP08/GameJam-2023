@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SpawnRandom : MonoBehaviour
 {
-
     [SerializeField] public GameObject objectToSpawn; 
 
     void Start()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class MovementLucaz : MonoBehaviour
 {
     Rigidbody2D body;
 
@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public float smoothTime = 0.3f; // Time to reach the target speed
     private Animator animator;
 
-    void Start ()
+    void Start()
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
 
-        if(horizontal > 0)
+        if (horizontal > 0)
             spriteRenderer.flipX = false;
         if (horizontal < 0)
             spriteRenderer.flipX = true;
@@ -42,14 +42,16 @@ public class Movement : MonoBehaviour
     {
         if (horizontal != 0 && vertical != 0) // Check for diagonal movement
         {
-            
+
             // limit movement speed diagonally, so you move at 70% speed
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
-        } 
-        if(horizontal != 0 || vertical != 0){
+        }
+        if (horizontal != 0 || vertical != 0)
+        {
             animator.SetFloat("Speed", 0.5f);
-        } else
+        }
+        else
         {
             animator.SetFloat("Speed", 0);
         }

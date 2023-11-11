@@ -3963,12 +3963,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 322685641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c501a10e0f44d2f49a1edf3fa41351ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8477fb2f0774ac3418dc3b9d609b39b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  attackDamage: 15
+  attackDamage: 20
   moveSpeed: 4
   player: {fileID: 1188715807}
 --- !u!50 &322685644
@@ -6744,12 +6744,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 516227188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c501a10e0f44d2f49a1edf3fa41351ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8477fb2f0774ac3418dc3b9d609b39b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  attackDamage: 15
+  attackDamage: 20
   moveSpeed: 4
   player: {fileID: 1188715807}
 --- !u!50 &516227191
@@ -6920,12 +6920,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 516289005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c501a10e0f44d2f49a1edf3fa41351ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8477fb2f0774ac3418dc3b9d609b39b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  attackDamage: 15
+  attackDamage: 20
   moveSpeed: 4
   player: {fileID: 1188715807}
 --- !u!50 &516289008
@@ -8122,12 +8122,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 612450665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c501a10e0f44d2f49a1edf3fa41351ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8477fb2f0774ac3418dc3b9d609b39b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  attackDamage: 15
+  attackDamage: 20
   moveSpeed: 4
   player: {fileID: 1188715807}
 --- !u!50 &612450668
@@ -15327,11 +15327,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1188715807}
   - component: {fileID: 1188715810}
-  - component: {fileID: 1188715809}
   - component: {fileID: 1188715811}
   - component: {fileID: 1188715812}
   - component: {fileID: 1188715813}
   - component: {fileID: 1188715814}
+  - component: {fileID: 1188715815}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -15354,20 +15354,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 663338711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1188715809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188715806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926057c222996054fb6524112e1905b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runSpeed: 8
-  smoothTime: 0.1
 --- !u!212 &1188715810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15456,7 +15442,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1188715806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666038f4d352d9d4f9d54f60ffda03de, type: 3}
+  m_Script: {fileID: 11500000, guid: c14a278f8ef529c4c9dceb570d740152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
@@ -15528,6 +15514,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1188715815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188715806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8769df8c7ce72147b2ad96679015b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 8
+  smoothTime: 0.3
 --- !u!1 &1195510237
 GameObject:
   m_ObjectHideFlags: 0
@@ -17079,12 +17079,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310656339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c501a10e0f44d2f49a1edf3fa41351ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8477fb2f0774ac3418dc3b9d609b39b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  attackDamage: 15
+  attackDamage: 20
   moveSpeed: 4
   player: {fileID: 1188715807}
 --- !u!50 &1310656343
