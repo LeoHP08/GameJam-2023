@@ -93,6 +93,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        GameObject.Find("killmanger").GetComponent<killmanger>().kill += 1;
         // Handle the enemy's death here (e.g., play an animation, destroy the game object, etc.)
         Destroy(gameObject);
     }
