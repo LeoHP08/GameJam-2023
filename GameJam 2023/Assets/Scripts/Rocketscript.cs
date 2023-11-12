@@ -45,7 +45,7 @@ public class Rocketscript : MonoBehaviour
 
 
 
-        var loadingtime = (1f);
+        //var loadingtime = (1f);
         //       loadingtime
 
     }
