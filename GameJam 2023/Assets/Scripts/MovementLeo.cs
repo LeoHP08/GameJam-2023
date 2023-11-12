@@ -31,7 +31,7 @@ public class MovementLeo : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)){
             ShootBulletTowardsMouse();
         }
-        var loadingtime = (1f);
+   //     var loadingtime = (1f);
  //       loadingtime
         
     }
