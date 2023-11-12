@@ -100,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -132,6 +132,9 @@ MonoBehaviour:
   attackDamage: 20
   moveSpeed: 4
   player: {fileID: 0}
+  particleprefab: {fileID: 4846129431724984981}
+  offsetRange: 10
+  spawnScale: 0.5
 --- !u!61 &2202690519817856449
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -161,7 +164,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.481524, y: 0.26264906}

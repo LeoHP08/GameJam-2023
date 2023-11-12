@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     SpriteRenderer spriteRenderer;
     Rigidbody2D body;
+    public GameObject particleprefab;
+    public float offsetRange = 1.0f;
+    public float spawnScale = 0.5f;
+
 
 
 
@@ -94,8 +98,22 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         GameObject.Find("killmanger").GetComponent<killmanger>().kill += 1;
+        GameObject particle1 = InstantiateAndScaleParticle(particleprefab);
+        GameObject particle2 = InstantiateAndScaleParticle(particleprefab);   
+        
         // Handle the enemy's death here (e.g., play an animation, destroy the game object, etc.)
         Destroy(gameObject);
+    }
+    private Vector3 GetOffsetPosition()
+    {
+        Vector3 randomOffset = Random.insideUnitSphere * offsetRange;
+        return transform.position + randomOffset;
+    }
+    private GameObject InstantiateAndScaleParticle(GameObject prefab)
+    {
+        GameObject particle = Instantiate(prefab, GetOffsetPosition(), Quaternion.identity);
+        particle.transform.localScale = Vector3.one * spawnScale;
+        return particle;
     }
 }
 
