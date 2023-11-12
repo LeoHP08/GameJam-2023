@@ -10,11 +10,13 @@ public class Enemy : MonoBehaviour
     public Transform player;
     private Animator animator;
     SpriteRenderer spriteRenderer;
+    Rigidbody2D body;
 
 
 
     void Start()
     {
+        body = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player").transform; // Ensure your player object is tagged as "Player"
         animator = GetComponent<Animator>();
@@ -96,3 +98,5 @@ public class Enemy : MonoBehaviour
     }
 }
 
+
+    

@@ -6,6 +6,7 @@ public class Rocketscript : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 2f;
     Rigidbody2D body;
+    public float damage = 10f;
 
 
     Vector2 currentVelocity;
@@ -15,6 +16,15 @@ public class Rocketscript : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
 
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            GiveDamage(collision.gameObject);
+        }
     }
 
     void Update()
@@ -29,6 +39,17 @@ public class Rocketscript : MonoBehaviour
         var loadingtime = (1f);
         //       loadingtime
 
+    }
+
+    void GiveDamage(GameObject enemy)
+    {
+        print("GiveDamage");
+        // Assuming the enemy also has a Health script
+        var enemyHealth = enemy.GetComponent<Enemy>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(damage);
+        }
     }
 
 

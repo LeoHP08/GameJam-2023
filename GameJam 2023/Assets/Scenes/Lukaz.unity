@@ -14740,7 +14740,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 150
   currentHealth: 0
-  damage: 10
 --- !u!61 &1188715813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14835,6 +14834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5932320535846821262, guid: 9f30b1d470e3753419d698e8c171d0f8, type: 3}
   bulletSpeed: 20
+  damage: 10
 --- !u!1 &1195510237
 GameObject:
   m_ObjectHideFlags: 0
