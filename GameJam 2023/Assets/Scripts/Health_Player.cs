@@ -4,7 +4,7 @@ public class Health : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
-
+    internal int currenthealth;
 
     void Start()
     {
