@@ -133,7 +133,7 @@ MonoBehaviour:
   moveSpeed: 4
   player: {fileID: 0}
   particleprefab: {fileID: 4846129431724984981}
-  offsetRange: 10
+  offsetRange: 40
   spawnScale: 0.5
 --- !u!61 &2202690519817856449
 BoxCollider2D:
