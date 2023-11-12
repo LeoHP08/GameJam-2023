@@ -5062,7 +5062,7 @@ PrefabInstance:
       objectReference: {fileID: 1188715807}
     - target: {fileID: 7386590312650253008, guid: eacc242a83010844792814728aba8e14, type: 3}
       propertyPath: offsetRange
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7386590312650253008, guid: eacc242a83010844792814728aba8e14, type: 3}
       propertyPath: particleprefab
