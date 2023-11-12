@@ -14,6 +14,7 @@ public class Rocketscript : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
@@ -21,9 +22,10 @@ public class Rocketscript : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
             ShootBulletTowardsMouse();
-        }
+
+
+
         var loadingtime = (1f);
         //       loadingtime
 
@@ -41,8 +43,16 @@ public class Rocketscript : MonoBehaviour
         {
             rb.velocity = direction * bulletSpeed;
         }
+        else
+        {
+            Debug.LogError("Bullet prefab does not have a Rigidbody2D component!");
+        }
+
+        // Destroy the bullet instance after 3 seconds
+        Destroy(bullet, 3f);
+        Debug.Log("Bullet instantiated and scheduled for destruction.");
     }
-
-
-
 }
+
+
+
