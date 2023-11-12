@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -7,16 +8,32 @@ public class Enemy : MonoBehaviour
     public float attackDamage = 20f;
     public float moveSpeed = 2f;
     public Transform player;
+    private Animator animator;
+    SpriteRenderer spriteRenderer;
+
+
 
     void Start()
     {
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player").transform; // Ensure your player object is tagged as "Player"
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+
         MoveTowardsPlayer();
+
+
+    }
+
+    void FixedUpdate()
+    {
+
+
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -51,7 +68,24 @@ public class Enemy : MonoBehaviour
     {
         if (player != null)
         {
+            Vector2 direction = player.position - transform.position;
+            direction.Normalize();
+
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+            if (direction.x > 0)
+                spriteRenderer.flipX = false;
+            if (direction.x < 0)
+                spriteRenderer.flipX = true;
+
+            if (direction.x != 0 || direction.y != 0)
+            {
+                animator.SetFloat("Speed", 0.5f);
+            }
+            else
+            {
+                animator.SetFloat("Speed", 0);
+            }
         }
     }
 
@@ -61,3 +95,4 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
