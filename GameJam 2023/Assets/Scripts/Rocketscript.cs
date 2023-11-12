@@ -20,12 +20,21 @@ public class Rocketscript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // Check for collision with an enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
-
-            GiveDamage(collision.gameObject);
+            // Assuming the enemy has a script that can take damage
+            var enemyHealth = collision.gameObject.GetComponent<Enemy>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damage);
+            }
         }
+
+        // Destroy the bullet regardless of what it hit
+
     }
+
 
     void Update()
     {
@@ -58,7 +67,14 @@ public class Rocketscript : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mousePosition - transform.position).normalized;
 
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        // Calculate a spawn position a little bit away from the character
+        float spawnDistance = 5.0f; // Distance away from the character
+        Vector3 spawnPosition = transform.position + (Vector3)direction * spawnDistance;
+
+        // Adjust z-axis to 0 to avoid placing the bullet behind or in front of the scene
+        spawnPosition.z = 0;
+
+        GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
