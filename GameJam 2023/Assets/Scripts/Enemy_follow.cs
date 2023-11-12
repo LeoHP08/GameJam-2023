@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             AttackPlayer(collision.gameObject);
-    
+            Debug.Log("skade!!!" + currentHealth);
         }
     }
 
@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
 
     void AttackPlayer(GameObject player)
     {
-        Health playerHealth = player.GetComponent<Health>();
+        Health_Player playerHealth = player.GetComponent<Health_Player>();
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(attackDamage);

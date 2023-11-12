@@ -1,10 +1,10 @@
 using UnityEngine;
 using TMPro;
-public class Health : MonoBehaviour
+public class Health_Player : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
-    public TMP_Text healthText;
+    // public TMP_Text healthText;
 
 
     void Start()
@@ -14,12 +14,13 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        healthText.text = "Health " + currentHealth;
+        // healthText.text = "Health " + currentHealth;
     }
 
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        Debug.Log("hej" + currentHealth);
         
         if (currentHealth <= 0)
         {
